@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="af94d1e4-0282-4403-ba3f-831bad1c2862" version="1">
+  <Properties>
+    <Name>Civadapter_actCom</Name>
+    <Description>This is a game-side adapter mod to use actCom instead of regular ai for computer controlled civs</Description>
+    <CustomProperties></CustomProperties>
+    <Created>1756696968</Created>
+    <Teaser>This is a game-side adapter mod to use actCom instead of regular ai for computer controlled civs</Teaser>
+    <Authors>ESUme-beep</Authors>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <InGameActions>
+    <AddGameplayScripts id="DumpData">
+      <File>DumpData.lua</File>
+    </AddGameplayScripts>
+  </InGameActions>
+  <Files>
+    <File>DumpData.lua</File>
+  </Files>
+</Mod>
