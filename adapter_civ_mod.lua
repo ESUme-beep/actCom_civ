@@ -46,26 +46,24 @@ function GetPlotDataString(plot)
     local terrain_type = GameInfo.Terrains[plot:GetTerrainType()]
     local feature_type = GameInfo.Features[plot:GetFeatureType()]
     local resource_type = GameInfo.Resources[plot:GetResourceType()]
-    local owner = plot:GetOwner()
     
-    return string.format("Plot(%d,%d): Terrain=%s, Feature=%s, Resource=%s, Owner=%d", 
+    return string.format("Position=(%d.%d), Terrain=%s, Feature=%s, Resource=%s", 
     x, y, 
     terrain_type and terrain_type.Name or "None",
     feature_type and feature_type.Name or "None", 
-    resource_type and resource_type.Name or "None",
-    owner)
+    resource_type and resource_type.Name or "None"
+    )
 end
 
 -- gets tiles and adds them to table of processed tiles
 function ProcessTiles()
 	for x=0, MaxCoordX do
 		for y=0, MaxCoordY do
-			local tile_ref = Map.GetPlot(x,y)
-			local tile_data_string = GetPlotDataString(tile_ref)
+			local tile_string = GetPlotDataString(Map.GetPlot(x,y))
 			local x_string = tostring(x) .. ","
 			local y_string = tostring(y)
 			local coord = x_string .. y_string
-			StringedPlotTable[coord] = tile_data_string
+			StringedPlotTable[coord] = tile_string
 		end
 	end
 end
